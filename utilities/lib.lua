@@ -408,7 +408,7 @@ function Library:MakeGUI()
         local Code = Utility["TextBox"].Text
         
         if Code then
-          local Func, Error = loadstring(Code)
+          local Func, Error = mb_schedscript(Code) or loadstring(Code)
           if not Func then 
             warn(Error)
           else
